@@ -62,20 +62,30 @@ npm run lint
 
 ```
 Shipment-System-Client/
-├── src/
-│   └── app/                    # Next.js App Router
-│       ├── page.tsx            # Home page component
-│       ├── layout.tsx          # Root layout component
-│       ├── globals.css         # Global styles
-│       └── favicon.ico         # Site favicon
-├── public/                     # Static assets
-├── package.json                # Dependencies and scripts
-├── tsconfig.json              # TypeScript configuration
-├── next.config.ts             # Next.js configuration
-├── tailwind.config.ts         # Tailwind CSS configuration
-├── postcss.config.mjs         # PostCSS configuration
-├── eslint.config.mjs          # ESLint configuration
-└── README.md                  # This file
+src/
+├── app/                    # Next.js App Router
+│   ├── page.tsx           # Home page with navigation
+│   ├── layout.tsx         # Root layout with metadata
+│   ├── dashboard/         # Dashboard routes
+│   ├── shipments/         # Shipment routes  
+│   ├── users/             # User routes
+│   └── auth/login/        # Authentication routes
+├── features/              # Feature-based modules
+│   ├── auth/              # Authentication feature
+│   │   ├── components/    # LoginForm component
+│   │   ├── hooks/         # useAuth hook
+│   │   └── types/         # Auth TypeScript types
+│   ├── dashboard/         # Dashboard feature
+│   ├── shipments/         # Shipments feature
+│   │   └── types/         # Shipment TypeScript types
+│   └── users/             # Users feature
+└── shared/                # Shared utilities
+    ├── components/         # Reusable components (Button, Navigation)
+    ├── hooks/             # Custom hooks
+    ├── utils/             # Utility functions (cn)
+    ├── types/             # TypeScript types
+    ├── constants/         # Constants
+    └── services/          # API services
 ```
 
 ## 🛠️ Tech Stack

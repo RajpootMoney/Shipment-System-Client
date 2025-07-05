@@ -25,6 +25,11 @@ export const useAuth = () => {
     
     try {
       // TODO: Implement actual API call
+      // For now, we'll just check if both email and password are provided
+      if (!email || !password) {
+        throw new Error('Email and password are required');
+      }
+      
       const mockUser: User = {
         id: '1',
         email,
@@ -42,7 +47,7 @@ export const useAuth = () => {
       localStorage.setItem('user', JSON.stringify(mockUser));
       
       return { success: true };
-    } catch (error) {
+    } catch {
       setAuthState(prev => ({ ...prev, isLoading: false }));
       return { success: false, error: 'Login failed' };
     }

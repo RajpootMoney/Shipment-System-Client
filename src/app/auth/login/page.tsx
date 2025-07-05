@@ -1,7 +1,6 @@
 'use client';
 
 import { LoginForm } from '@/features/auth/components/LoginForm';
-import { useAuth } from '@/features/auth/hooks/useAuth';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
@@ -26,7 +25,7 @@ export default function LoginPage() {
       } else {
         setError('Invalid credentials');
       }
-    } catch (err) {
+    } catch {
       setError('Login failed. Please try again.');
     } finally {
       setIsLoading(false);
