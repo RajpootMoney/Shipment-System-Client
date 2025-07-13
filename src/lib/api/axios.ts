@@ -26,7 +26,7 @@ instance.interceptors.request.use(
 instance.interceptors.response.use(
   (response) => response,
   async (error: AxiosError) => {
-    const originalRequest = error.config as any;
+    const originalRequest = error.config as AxiosError['config'] & { _retry?: boolean };
 
     if (
       error.response?.status === 401 &&
